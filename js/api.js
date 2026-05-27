@@ -7,7 +7,7 @@
   Isso disponibiliza a rota:
   http://localhost:3000/pensamentos
 */
-const URL_BASE = "http://localhost:3000";
+const URL_BASE = "https://memoteca-api-8w1z.onrender.com";
 
 /*
   Objeto responsável por centralizar todas as requisições da aplicação.
