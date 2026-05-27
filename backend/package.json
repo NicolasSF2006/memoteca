@@ -1,14 +1,17 @@
 {
   "name": "memoteca-backend",
   "version": "1.0.0",
-  "description": "Backend fake da aplicação Memoteca, usado para simular uma API REST com json-server.",
+  "description": "API fake da Memoteca usando json-server.",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch db.json --port 3000"
+    "start": "json-server --watch db.json --host 0.0.0.0 --port $PORT"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
   },
   "keywords": [
     "json-server",
-    "api-fake",
+    "api",
     "crud",
     "memoteca"
   ],
