@@ -1,9 +1,21 @@
+/*
+  Reset básico.
+
+  Remove margens e paddings padrões dos navegadores
+  e faz com que largura/altura incluam bordas e paddings no cálculo.
+*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/*
+  Variáveis globais de cores.
+
+  Facilitam a manutenção da identidade visual do projeto.
+  Se uma cor precisar mudar, basta alterar aqui.
+*/
 :root {
   --Baby-blue: #dbe4ef;
   --Azul-Dark: #041832;
@@ -12,6 +24,12 @@
   --Cinza: #444;
 }
 
+/*
+  Estilos base do corpo da página.
+
+  overflow-x: hidden evita rolagem lateral.
+  display flex em coluna ajuda a organizar header, main e footer verticalmente.
+*/
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
@@ -19,6 +37,12 @@ body {
   flex-direction: column;
 }
 
+/*
+  Conteúdo principal da aplicação.
+
+  Centraliza os elementos em coluna e cria espaço suficiente
+  para formulário, divisor e mural de pensamentos.
+*/
 main {
   padding-top: 120px;
   flex: 1;
@@ -30,6 +54,11 @@ main {
   box-sizing: border-box;
 }
 
+/*
+  Camada de imagem de fundo.
+
+  Fica posicionada atrás do conteúdo por causa do z-index negativo.
+*/
 .overlay {
   position: absolute;
   top: 0;
@@ -42,15 +71,35 @@ main {
   z-index: -1;
 }
 
+/*
+  Camada extra de cor sobre o fundo.
+
+  Ajuda a suavizar a imagem de background e melhorar a leitura.
+*/
 .overlay-color {
   background-color: #f4f4f4;
 }
 
+/* =========================
+   Header
+   ========================= */
+
+/*
+  Cabeçalho principal.
+
+  Usa fundo azul escuro e espaçamento grande para destacar
+  a chamada inicial do projeto.
+*/
 header {
   padding: 112px 240px 112px 360px;
   background: var(--Azul-Dark, #041832);
 }
 
+/*
+  Container interno do cabeçalho.
+
+  Organiza o bloco de logo/texto e a imagem lateral.
+*/
 .conteudo-cabecalho {
   display: flex;
   justify-content: center;
@@ -58,16 +107,26 @@ header {
   align-items: center;
 }
 
+/*
+  Bloco da logo e do texto principal.
+*/
 header .logo {
   display: flex;
   flex-direction: column;
   gap: 48px;
 }
 
+/* Limita o tamanho da imagem da logo */
 header .logo img {
   max-width: 200px;
 }
 
+/*
+  Título principal do cabeçalho.
+
+  Usa peso leve para o texto comum, enquanto o <strong>
+  recebe destaque visual no HTML.
+*/
 header .logo h1 {
   color: var(--Baby-blue, #dbe4ef);
   font-family: "Poppins", sans-serif;
@@ -77,10 +136,20 @@ header .logo h1 {
   line-height: 67.6px;
 }
 
+/* Limita o tamanho da imagem decorativa do cabeçalho */
 .imagem-cabecalho img {
   max-width: 500px;
 }
 
+/* =========================
+   Footer
+   ========================= */
+
+/*
+  Rodapé da página.
+
+  Mantém a identidade visual do cabeçalho usando o mesmo azul escuro.
+*/
 footer {
   padding: 32px 360px;
   background: #041832;
@@ -91,6 +160,13 @@ footer {
   left: 0;
 }
 
+/* =========================
+   Títulos principais
+   ========================= */
+
+/*
+  Títulos das seções do formulário e do mural.
+*/
 h2,
 h3 {
   color: var(--Azul-Dark, #041832);
@@ -102,6 +178,16 @@ h3 {
   line-height: normal;
 }
 
+/* =========================
+   Formulário
+   ========================= */
+
+/*
+  Card do formulário.
+
+  Centraliza os campos, aplica fundo branco, bordas arredondadas
+  e sombra para destacar o formulário do background.
+*/
 #form-container {
   display: flex;
   padding: 48px 40px;
@@ -118,12 +204,22 @@ h3 {
   margin-top: 40px;
 }
 
+/*
+  Formulário de criação/edição de pensamentos.
+
+  Fica em coluna para empilhar labels, textarea, input e botões.
+*/
 #pensamento-form {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
+/*
+  Campos de texto do formulário.
+
+  Compartilham o mesmo fundo, padding e borda arredondada.
+*/
 #pensamento-conteudo,
 #pensamento-autoria {
   padding: 16px;
@@ -133,10 +229,14 @@ h3 {
   overflow-wrap: break-word;
 }
 
+/* Altura mínima do campo de pensamento */
 #pensamento-conteudo {
   min-height: 80px;
 }
 
+/*
+  Labels do formulário.
+*/
 #pensamento-form label {
   margin-bottom: 16px;
   color: var(--Azul-Dark, #041832);
@@ -147,6 +247,9 @@ h3 {
   line-height: normal;
 }
 
+/*
+  Estilo dos placeholders dos campos.
+*/
 #pensamento-conteudo::placeholder,
 #pensamento-autoria::placeholder {
   color: var(--Cinza-medio, #8f8f8f);
@@ -157,6 +260,9 @@ h3 {
   line-height: normal;
 }
 
+/*
+  Estilo base dos inputs e textarea do formulário.
+*/
 #pensamento-form textarea,
 #pensamento-form input {
   margin-bottom: 24px;
@@ -166,6 +272,9 @@ h3 {
   font-family: "Poppins", sans-serif;
 }
 
+/*
+  Container dos botões do formulário.
+*/
 .form-botoes {
   display: flex;
   justify-content: center;
@@ -173,6 +282,9 @@ h3 {
   padding-top: 16px;
 }
 
+/*
+  Estilo compartilhado dos botões salvar e cancelar.
+*/
 #botao-salvar,
 #botao-cancelar {
   padding: 8px 32px;
@@ -185,25 +297,46 @@ h3 {
   line-height: normal;
 }
 
+/* Botão principal de salvar */
 #botao-salvar {
   background: var(--Azul-Dark, #041832);
   min-width: 160px;
 }
 
+/*
+  Botão de cancelar.
+
+  Mantém o texto azul escuro e fica com aparência mais neutra.
+*/
 #botao-cancelar {
   color: var(--Azul-Dark, #041832);
 }
 
+/* =========================
+   Lista de pensamentos
+   ========================= */
+
+/*
+  Container do mural.
+
+  Limita a largura máxima dos cards e centraliza a área.
+*/
 #lista-pensamentos-container {
   width: 100%;
   max-width: 1200px;
   margin: 40px 0;
 }
 
+/* Espaçamento do título "Meu Mural" */
 #lista-pensamentos-container h3 {
   margin: 40px 0;
 }
 
+/*
+  Lista onde os pensamentos são inseridos pelo JavaScript.
+
+  flex-wrap permite que os cards quebrem linha.
+*/
 #lista-pensamentos {
   list-style: none;
   padding: 0;
@@ -213,6 +346,12 @@ h3 {
   row-gap: 32px;
 }
 
+/*
+  Card individual de pensamento.
+
+  Cada <li> é criado dinamicamente pelo JavaScript.
+  O card possui sombra deslocada e tamanho mínimo para manter o layout.
+*/
 .li-pensamento {
   position: relative;
   padding: 16px;
@@ -229,6 +368,9 @@ h3 {
   hyphens: auto;
 }
 
+/*
+  Ícone de aspas decorativo dentro do card.
+*/
 .icone-aspas {
   position: absolute;
   top: 32px;
@@ -237,6 +379,12 @@ h3 {
   height: 50px;
 }
 
+/*
+  Texto do pensamento e autoria.
+
+  Ambos usam a fonte Roboto Mono e permitem quebra de linha
+  para evitar estouro do card.
+*/
 .pensamento-conteudo,
 .pensamento-autoria {
   margin-left: 20px;
@@ -250,23 +398,35 @@ h3 {
   hyphens: auto;
 }
 
+/* Conteúdo principal do pensamento */
 .pensamento-conteudo {
   margin-top: 96px;
   font-size: 20px;
   font-weight: 400;
 }
 
+/* Autoria ou fonte do pensamento */
 .pensamento-autoria {
   font-size: 22px;
   font-weight: 600;
 }
 
+/*
+  Container dos ícones de editar e excluir.
+
+  Fica posicionado no canto inferior direito do card.
+*/
 .icones {
   position: absolute;
   bottom: 16px;
   right: 16px;
 }
 
+/*
+  Botões de editar e excluir.
+
+  Removem aparência padrão de botão e exibem apenas os ícones.
+*/
 .botao-editar,
 .botao-excluir {
   background: none;
@@ -276,12 +436,20 @@ h3 {
   margin-left: 8px;
 }
 
+/* Tamanho dos ícones dos botões */
 .botao-editar img,
 .botao-excluir img {
   width: 20px;
   height: 20px;
 }
 
+/* =========================
+   Separador e mensagem vazia
+   ========================= */
+
+/*
+  Separador visual entre o formulário e o mural.
+*/
 span {
   width: 180px;
   height: 1px;
@@ -289,6 +457,9 @@ span {
   margin: 96px 0 48px 0;
 }
 
+/*
+  Mensagem exibida quando não existem pensamentos cadastrados.
+*/
 .mensagem-vazia {
   display: flex;
   flex-direction: column;

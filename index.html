@@ -1,16 +1,29 @@
 <!doctype html>
+
+<!-- Define o idioma principal da página como português do Brasil -->
 <html lang="pt-BR">
   <head>
+    <!-- Define a codificação de caracteres para suportar acentos e caracteres especiais -->
     <meta charset="UTF-8" />
+
+    <!-- Garante que o layout seja responsivo em celulares, tablets e desktops -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Título exibido na aba do navegador -->
     <title>CRUD de Pensamentos</title>
+
+    <!-- Arquivo principal de estilos da aplicação -->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
+
   <body>
+    <!-- Cabeçalho visual da página -->
     <header>
       <div class="conteudo-cabecalho">
+        <!-- Bloco com logo e chamada principal do projeto -->
         <div class="logo">
           <img src="assets/imagens/logo.png" alt="" />
+
           <h1>
             Trechos de músicas,<br />
             citações de livros e <br />
@@ -20,24 +33,48 @@
             >
           </h1>
         </div>
+
+        <!-- Imagem decorativa do cabeçalho -->
         <div class="imagem-cabecalho">
           <img src="assets/imagens/computador-cabecalho.png" alt="" />
         </div>
       </div>
     </header>
+
+    <!--
+      Conteúdo principal da página.
+
+      A classe background-overlay indica que esta área possui camadas visuais
+      de fundo aplicadas via CSS.
+    -->
     <main class="background-overlay">
+      <!-- Camadas visuais usadas para compor o fundo da página -->
       <div class="overlay"></div>
       <div class="overlay overlay-color"></div>
+
+      <!-- Título da área de cadastro -->
       <h2>Adicione um pensamento novo:</h2>
+
+      <!-- Container do formulário de criação/edição de pensamentos -->
       <section id="form-container">
         <form id="pensamento-form">
+          <!--
+            Campo oculto usado para armazenar o ID do pensamento.
+
+            Quando vazio, o formulário cria um novo pensamento.
+            Quando preenchido, o formulário edita um pensamento existente.
+          -->
           <input type="hidden" id="pensamento-id" />
+
+          <!-- Campo de conteúdo do pensamento -->
           <label for="pensamento-conteudo">Pensamento</label>
           <textarea
             id="pensamento-conteudo"
             placeholder="Digite seu pensamento"
             required
           ></textarea>
+
+          <!-- Campo de autoria ou fonte do pensamento -->
           <label for="pensamento-autoria">Autoria ou Fonte</label>
           <input
             type="text"
@@ -45,15 +82,31 @@
             placeholder="Insira a autoria ou fonte"
             required
           />
+
+          <!-- Botões de ação do formulário -->
           <div class="form-botoes">
+            <!-- Envia o formulário para salvar ou atualizar um pensamento -->
             <button type="submit" id="botao-salvar">Salvar</button>
+
+            <!-- Cancela a edição/cadastro e limpa o formulário -->
             <button type="button" id="botao-cancelar">Cancelar</button>
           </div>
         </form>
       </section>
+
+      <!-- Elemento visual/separador usado pelo layout -->
       <span></span>
+
+      <!-- Container da lista de pensamentos cadastrados -->
       <section id="lista-pensamentos-container">
         <h3>Meu Mural</h3>
+
+        <!--
+          Mensagem exibida quando ainda não há pensamentos cadastrados.
+
+          O JavaScript pode esconder ou mostrar esse bloco dependendo
+          da quantidade de pensamentos na lista.
+        -->
         <div id="mensagem-vazia" class="mensagem-vazia">
           <img
             src="assets/imagens/lista-vazia.png"
@@ -61,16 +114,35 @@
           />
           <p>Nada por aqui ainda, que tal compartilhar alguma ideia?</p>
         </div>
+
+        <!-- Lista onde os pensamentos são renderizados dinamicamente pelo JavaScript -->
         <ul id="lista-pensamentos"></ul>
       </section>
     </main>
+
+    <!-- Rodapé com créditos do projeto -->
     <footer>
       <p>
         &copy; 2024 Desenvolvido por Alura. Projeto fictício sem fins
         comerciais.
       </p>
     </footer>
+
+    <!--
+      Biblioteca Axios.
+
+      Usada para fazer requisições HTTP para a API fake/backend,
+      como buscar, criar, editar e excluir pensamentos.
+    -->
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+
+    <!--
+      Scripts em módulos.
+
+      api.js: concentra as funções de comunicação com a API.
+      main.js: controla os eventos principais da aplicação.
+      ui.js: controla a criação e atualização dos elementos visuais.
+    -->
     <script type="module" src="js/api.js"></script>
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/ui.js"></script>
