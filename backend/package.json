@@ -4,7 +4,7 @@
   "description": "API fake da Memoteca usando json-server.",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch db.json --host 0.0.0.0 --port $PORT"
+    "start": "json-server db.json --host 0.0.0.0 --port $PORT"
   },
   "dependencies": {
     "json-server": "^1.0.0-beta.3"
