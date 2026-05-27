@@ -2,7 +2,9 @@
 
 # Memoteca
 
-Memoteca é uma aplicação web para cadastrar, listar, editar e excluir pensamentos, frases, citações e ideias. O projeto utiliza uma API fake com JSON Server para simular um backend e praticar operações CRUD.
+Link para a página: https://nicolassf2006.github.io/memoteca/
+
+Memoteca é uma aplicação web para cadastrar, listar, editar e excluir pensamentos, frases, citações e ideias. O projeto utiliza uma API fake com JSON Server hospedada no Render, permitindo praticar operações CRUD em uma aplicação publicada online.
 
 ## 🔨 Funcionalidades do projeto
 
@@ -11,7 +13,9 @@ Memoteca é uma aplicação web para cadastrar, listar, editar e excluir pensame
 - **Edição de pensamentos:** permite atualizar o conteúdo e a autoria de pensamentos existentes.
 - **Exclusão de pensamentos:** permite remover pensamentos cadastrados.
 - **Mensagem de lista vazia:** exibe uma mensagem quando não há pensamentos cadastrados.
-- **Comunicação com API fake:** utiliza JSON Server para persistir os dados durante o desenvolvimento.
+- **Comunicação com API:** utiliza Axios para se comunicar com uma API fake criada com JSON Server.
+- **Frontend publicado:** interface hospedada no GitHub Pages.
+- **Backend publicado:** API hospedada no Render.
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
@@ -22,7 +26,8 @@ Memoteca é uma aplicação web para cadastrar, listar, editar e excluir pensame
 - **Axios:** biblioteca utilizada para realizar requisições HTTP.
 - **Node.js:** ambiente necessário para executar o JSON Server.
 - **JSON Server:** ferramenta usada para simular uma API REST.
-- **Localhost:** ambiente local utilizado para desenvolvimento e testes.
+- **GitHub Pages:** hospedagem do frontend.
+- **Render:** hospedagem da API fake.
 
 ## 📁 Estrutura do projeto
 
@@ -38,7 +43,9 @@ memoteca/
 │   └── ui.js
 ├── backend/
 │   ├── db.json
-│   └── package.json
+│   ├── package.json
+│   ├── package-lock.json
+│   └── public/
 ├── index.html
 └── README.md
 ```
